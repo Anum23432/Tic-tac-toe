@@ -1,0 +1,18 @@
+body{
+  background-color:rgb(141, 197, 185);
+  font-family:cursive;
+}
+button{
+  padding:7px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgb(33, 207, 170);
+  box-shadow: 2px 2px white;
+  color:black;
+  border:2px solid purple;
+  
+}
+li{
+  list-style: none;
+}
+

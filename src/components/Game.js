@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { calculateWinner } from './Helpers';
 import Board from './Board';
 
-const styles={
-    width: '200px',
-    margin:'18px auto',
-}
+
+
 const Game=()=> {
    const [history, setHistory] = useState([Array(9).fill(null)]);
    const [stepNumber,setStepNumber]= useState(0);
@@ -33,9 +31,13 @@ const Game=()=> {
        history.map((__step,move)=>{
            const destination = move ? `Go to move${move}` : 'Start Game';
            return(
+               
                <li key={move}>
                    <button onClick={()=> jumpTo(move)}>{destination}</button>
                </li>
+
+               
+               
            )
        })
        
@@ -44,8 +46,9 @@ const Game=()=> {
     
     return (
         <>
+        <div className='box'><span>Tic Tac Toe</span></div><br></br>
         <Board  squares={history[stepNumber]} onClick={handleClick} />
-       <div style={styles}>
+       <div className='win'>
            <p>{winner ? 'Winner: ' + winner :'Next Player: ' +(xIsNext ? 'x' : '0')}</p>
            {renderMoves()}
        </div>
